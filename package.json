@@ -1,6 +1,6 @@
 {
   "name": "pp-props",
-  "filename": "pp-props.min.js",
+  "filename": "pp-props.js",
   "version": "1.0.0",
    "main": "dist/pp-props.js",
   "description": "small script to load pp merchant props ",
