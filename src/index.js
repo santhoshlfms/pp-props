@@ -6,12 +6,6 @@ import json from "../props.json"
     var myEle = document.getElementById("pp-props");
     const style = document.createElement('style');
     style.innerHTML = `
-      .note {
-        background-color: yellow;
-        color:red;
-      }`;
-    document.head.appendChild(style);
-    style.innerHTML = `
       .pp-list {
         list-style-type: square;
       }
