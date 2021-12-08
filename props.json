@@ -1,0 +1,23 @@
+[
+  {
+    "selector": "psp",
+    "benefits": [
+      "Enable a seamless buying experience for your customers that drives conversion and loyalty.",
+      "Accept PayPal payments with simplified onboarding, adaptable integration and easy account setup.",
+      "Access to 400M+ PayPal customers around the globe*, with local currency support for better payment management",
+      "Peace of mind for you and your customers with buyer and seller protection on eligible sales."
+    ],
+    "statistics" :"*PayPal Second Quarter 2021 Results"
+    
+  },
+  {
+    "selector": "cart",
+    "benefits": [
+      "Simple, effective invoice payment and management.",
+      "Help you address local business needs – and expand internationally to 400M+ PayPal customers in more than 200 markets. *",
+      "Peace of mind for you and your customers with advanced fraud protection, dispute resolution, and tracking API.",
+      "Growth insights from our dual-sided worldwide network of sellers and shoppers that gets smarter with every transaction."
+    ],
+    "statistics" :"*PayPal Second Quarter 2021 Results"
+  }
+]
