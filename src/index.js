@@ -16,7 +16,7 @@ import json from "../props.json"
         // clear the div content and load our value props
         myEle.innerHTML = "";
         // find the type of the
-        let type = myEle.getAttribute("type")
+        let type = myEle.getAttribute("data-pp-type")
         let template = constructDom(type)
         myEle.innerHTML = template
 
