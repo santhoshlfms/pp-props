@@ -18,7 +18,8 @@ import json from "../props.json"
         // find the type of the
         let type = myEle.getAttribute("data-pp-type")
         let template = constructDom(type)
-        myEle.innerHTML = template
+        setTimeout(() => { myEle.innerHTML = template }, 1000)
+
 
     } else {
         // throw error in dom 
@@ -36,7 +37,7 @@ import json from "../props.json"
 
         let template = `<div id='pp-logo'><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-150px.png"/></div>
                          <div><p><b>An instant global business.</b></p><p>One integration for all your online payment needs.</p></div>   
-                        <div><p>Benefits</p><ul class='pp-list'>` + li + `</ul><div id='statistics'>`+statistics+`</div></div>`
+                        <div><p>Benefits</p><ul class='pp-list'>` + li + `</ul><div id='statistics'>` + statistics + `</div></div>`
         return template;
     }
 })()
