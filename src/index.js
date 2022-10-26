@@ -9,6 +9,28 @@ import json from "../props.json"
       .pp-list {
         list-style-type: square;
       }
+      #pp-logo {
+        margin-top: 10px;
+        overflow: auto;
+      }
+      .main-log-pp {
+        float: left;
+      }
+      .pp-wallet {
+        float: right;
+      }
+      #content {
+        margin-top: 20px;
+      }
+      .pp-account-connected {
+        padding: 5px 0px 0px 15px;
+        float: left;
+      }
+      @media only screen and (min-width: 992px) {
+        .pp-container {
+          max-width: 50% !important;
+        }
+      }
     `;
     document.head.appendChild(style);
 
@@ -17,7 +39,8 @@ import json from "../props.json"
         myEle.innerHTML = "";
         // find the type of the
         let type = myEle.getAttribute("data-pp-type")
-        let template = constructDom(type)
+        let isConnected = myEle.getAttribute("data-pp-isConnected")
+        let template = constructDom(type, isConnected)
         setTimeout(() => { myEle.innerHTML = template }, 1000)
 
 
@@ -26,18 +49,46 @@ import json from "../props.json"
         throw ("Selector pp-props not found")
     }
 
-    function constructDom(type) {
+    function constructDom(type, isConnected) {
         let propValue = json.filter(i => i.selector === type)[0];
         let benefitsArray = propValue.benefits;
         let statistics = propValue.statistics
+        console.log("isConnected", isConnected, typeof isConnected)
         let li = ""
         benefitsArray.forEach((msg, i) => {
-            li += `<li>` + msg + `</li>`
+            li += `<li>${msg}</li>`
         })
-
-        let template = `<div id='pp-logo'><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-150px.png"/></div>
-                         <div><p><b>An instant global business.</b></p><p>One integration for all your online payment needs.</p></div>   
-                        <div><p>Benefits</p><ul class='pp-list'>` + li + `</ul><div id='statistics'>` + statistics + `</div></div>`
+        console.log(li)
+        let template = `
+        <div class="pp-container">
+            <div id='pp-logo'>
+            <span class="main-log-pp">
+                <img src="./public/img/pp-main-logo.png" />
+            </span>
+            <span class="pp-wallet">
+                <img src="./public/img/logo-pp.png" style="height:70px" />
+            </span>
+            <span style="clear:both"></span>
+            </div>
+            <div id="content">
+            ${isConnected == "false" ?
+                `<div id="not-connected">
+                    <div id='statistics' style="font-weight: bold;">${statistics}</div>
+                    <ul class='pp-list'>
+                    ${li}
+                    </ul>
+                </div>` : `<div id='statistics' style="font-weight: bold;">${statistics}</div>
+                <div id="connected">
+                    <span class="main-log-pp">
+                    <img src="./public/img/pp-connected.png" />
+                    </span>
+                    <span class="pp-account-connected">
+                    Your PayPal account is connected
+                    </span>
+                    <span style="clear:both"></span>
+                </div>`} 
+            </div>
+        </div>`
         return template;
     }
 })()
