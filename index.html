@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PP-props demo</title>
+  <style>
+    .pp-list {
+      list-style-type: square;
+    }
+
+    #pp-recommended {
+      margin-top: 10px;
+      overflow: auto;
+    }
+
+    #pp-logo {
+      overflow: auto;
+      margin: 0px !important;
+    }
+
+    .main-log-pp {
+      float: left;
+    }
+
+    .pp-wallet {
+      float: right;
+    }
+
+    #content {
+      margin-top: 20px;
+    }
+
+    .pp-account-connected {
+      padding: 5px 0px 0px 15px;
+      float: left;
+    }
+
+    #container-content {
+      margin-left: 7%;
+      float: left;
+    }
+
+    #connected-statistics {
+      margin-bottom: 5%;
+    }
+
+    .connected-content {
+      overflow: auto;
+      margin-top: 5px;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .get-started-button {
+      color: white;
+      background-color: #222D65;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 4px;
+      padding: 10px 35px;
+      margin-top: 10px;
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    @media only screen and (min-width: 992px) {
+      .pp-container {
+        max-width: 50% !important;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .pp-wallet {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script defer src="./dist/pp-props.js"></script>
+
+  <div id="pp-props" data-pp-type="full-stack" data-pp-connected="true" data-pp-email-verified="true"
+    data-pp-onboardlink="https://www.sandbox.paypal.com/welcome/link-partner-account/signup?referralid=3718b4a6c7e7da1b1e89a18af550791d1ac7c2437a5896ef7efcaf3411f9ea75&country.x=KE&locale.x=en_KE&scope=scope_group_provisioning_platform&redirect_uri=https://shopping-paypal.herokuapp.com/thankyou&state=equity-12342">
+  </div>
+
+
+
+</body>
+
+</html>
